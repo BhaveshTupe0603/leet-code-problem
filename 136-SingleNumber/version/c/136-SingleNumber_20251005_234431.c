@@ -1,0 +1,10 @@
+// Last updated: 10/5/2025, 11:44:31 PM
+int maxProfit(int* prices, int pricesSize) {
+    int minPrice = 2147483647;
+    int maxProfit = 0;
+    for (int i = 0; i < pricesSize; i++) {
+        if (prices[i] < minPrice) minPrice = prices[i];
+        else if (prices[i] - minPrice > maxProfit) maxProfit = prices[i] - minPrice;
+    }
+    return maxProfit;
+}
